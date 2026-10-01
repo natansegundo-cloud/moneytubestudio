@@ -1,0 +1,45 @@
+[project]
+name = "MINDTRACE"
+language = "en-US"
+default_topic = "Why Your Brain Replays Embarrassing Memories"
+
+[engine]
+root = "engine/MoneyPrinterTurbo"
+api_url = "http://127.0.0.1:8080"
+health_timeout_seconds = 3
+
+[content]
+target_duration_min = 8
+target_duration_max = 10
+target_word_count_min = 1200
+target_word_count_max = 1500
+visual_sections = 15
+shorts_per_longform = 4
+
+[render]
+aspect = "16:9"
+width = 1920
+height = 1080
+video_clip_duration_seconds = 5
+match_materials_to_script = true
+subtitle_enabled = false
+video_count = 1
+threads = 2
+
+[voice]
+provider = "edge"
+voice = "en-US-ChristopherNeural"
+rate = 1.0
+
+[footage]
+primary_source = "pexels"
+secondary_source = "pixabay"
+
+[audio]
+background_music_enabled = true
+background_music_volume = 0.08
+music_directory = "engine/MoneyPrinterTurbo/resource/songs"
+
+[storage]
+projects_directory = "projects/mindtrace"
+render_directory = "projects/mindtrace/renders"

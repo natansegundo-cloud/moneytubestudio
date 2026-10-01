@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "purpose": "MINDTRACE owns the production intent and delegates rendering to MoneyPrinterTurbo.",
+  "inputs": {
+    "topic": "string",
+    "script_path": "relative path to an English narration script",
+    "visual_sections_path": "relative path to ordered visual sections",
+    "settings": {
+      "language": "en-US",
+      "target_duration_min": "integer",
+      "target_duration_max": "integer",
+      "aspect": "16:9",
+      "voice": "string",
+      "subtitle_enabled": "boolean",
+      "match_materials_to_script": "boolean",
+      "video_clip_duration_seconds": "number",
+      "video_count": "integer",
+      "threads": "integer"
+    }
+  },
+  "lifecycle": [
+    "draft",
+    "script_ready",
+    "audio_ready",
+    "materials_ready",
+    "rendering",
+    "longform_ready",
+    "shorts_ready",
+    "published"
+  ],
+  "outputs": {
+    "longform_mp4": "relative path",
+    "audio_file": "relative path",
+    "material_manifest": "relative path",
+    "shorts_manifest": "relative path"
+  },
+  "local_api": {
+    "base_url": "http://127.0.0.1:8090",
+    "health": "GET /api/health",
+    "create_production": "POST /api/productions",
+    "queue_render": "POST /api/productions/{production_id}/render",
+    "poll_job": "GET /api/jobs/{task_id}"
+  }
+}

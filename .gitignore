@@ -1,0 +1,36 @@
+# Local Python environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Frontend dependencies and builds
+interface/node_modules/
+interface/dist/
+
+# Local configuration and secrets
+config/mindtrace.toml
+config/*.local.toml
+*.env
+!.env.example
+
+# Generated production files
+projects/mindtrace/renders/*
+!projects/mindtrace/renders/.gitkeep
+projects/mindtrace/scripts/*
+!projects/mindtrace/scripts/.gitkeep
+
+# Large generated media; keep source metadata and scripts in Git
+editado_capcut/
+projects/mindtrace/videos/*/*.mp4
+projects/mindtrace/videos/*/*.mp3
+engine/MoneyPrinterTurbo/storage/cache_videos/
+
+# MPT runtime files; keep the reference source tracked separately if desired
+engine/MoneyPrinterTurbo/config.toml
+engine/MoneyPrinterTurbo/.venv/
+engine/MoneyPrinterTurbo/__pycache__/
+engine/MoneyPrinterTurbo/logs/
+engine/MoneyPrinterTurbo/tmp/
+engine/MoneyPrinterTurbo/output/
